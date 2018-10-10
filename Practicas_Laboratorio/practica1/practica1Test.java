@@ -1,8 +1,9 @@
-package practica1;
+package Practicas_Laboratorio.practica1;
 
 import java.util.*;
 
-import static junit.framework.TestCase.assertEquals;
+import static org.junit.Assert.assertEquals;
+
 
 @SuppressWarnings("ALL")
 public class practica1Test {

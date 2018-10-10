@@ -1,4 +1,4 @@
-package practica1;
+package Practicas_Laboratorio.practica1;
 
 import java.util.Collection;
 import java.util.HashSet;
