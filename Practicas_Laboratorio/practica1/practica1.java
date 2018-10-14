@@ -35,38 +35,37 @@ public class practica1 {
      * @param iter  Iterador a una colección de enteros
      * @return Conjunto de de enteros.
      */
-    static public Set <Integer> filtra(Iterator<Integer> iter) {
-        //HACER CON UN SET AUXILIAR Y DOS ITERADORES
+    static public Set<Integer> filtra(Iterator<Integer> iter) {
         Set<Integer> aux = new HashSet<Integer>();
+        Set<Integer> sol = new HashSet<Integer>();
+        Iterator<Integer> iter1, iter2;
         int n1,n2;
+        boolean pass;
 
-        while (iter.hasNext()){
-            boolean passed = true;
+
+        while (iter.hasNext()){ //MIENTRAS EL ITERADOR RECIBIDO CONTENGA ELEMENTOS
             n1 = iter.next();
-            while (n1==0 && iter.hasNext()){
-                n1 = iter.next();
-            }
-
-            if (n1 == 0 && !iter.hasNext()){
-                passed=false;
-            }
-
-            Iterator<Integer> iter2 = iter;
-            while (iter2.hasNext()){
-                n2 = iter2.next();
-                while (n2==0 && iter.hasNext()){
-                    n2 = iter2.next();
-                }
-                if(n1%n2==0){
-                    passed=false;
-                    break;
-                }
-            }
-            if(passed){
+            if (n1 > 0 && !(aux.contains(n1))){ //AÑADIMOS LOS ELEMENTOS QUE CUMPLEN LA CONDICION AL SET AUXILIAR
                 aux.add(n1);
             }
         }
-        return aux;
+
+        iter1 = aux.iterator();
+        while (iter1.hasNext()){    //MIENTRAS NOS QUEDEN ELEMENTOS EN EL ITERADOR
+            pass = true;    //SUPONEMOS QUE EL ELEMENTO ACTUAL CUMPLE ES VALIDO
+            n1 = iter1.next();
+            iter2 = aux.iterator();
+            while (iter2.hasNext()){    //Y LO COMPARAMOS CON TODOS LOS ELEMENTOS DEL SET AUXILIAR
+                n2 = iter2.next();
+                if (n1 != n2 && n1%n2 == 0) {   //SI CUMPLE LA CONDICION SE DESCARTA
+                    pass = false;
+                }
+            }
+            if (pass){  //SI ES VALIDO SE AÑADE A LA SOLUCION
+                sol.add(n1);
+            }
+        }
+        return sol;
     }
 
     /**
