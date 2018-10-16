@@ -1,9 +1,6 @@
 package Practicas_Laboratorio.practica1;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 
 public class practica1 {
 
@@ -75,7 +72,24 @@ public class practica1 {
      * @return Conjunto de <i>String</i> repetidos. 
      */
     static public Set<String> repetidos(Collection<Set<String>> col) {
-        // TODO
-        return null;
+        Set<String> sol = new HashSet<String>();    //CONJUNTO SOLUCION
+        Set<String> vistos = new HashSet<String>(); //CONJUNTO DE VISTOS
+        String aux;
+
+        List<String> lista = new ArrayList<String>();
+        Iterator<Set<String>> iterSet = col.iterator(); //METEMOS TODOS LOS ELEMENTOS DE LA COLECCION EN UNA LISTA
+        while (iterSet.hasNext()){
+            lista.addAll(iterSet.next());
+        }
+        Iterator<String> iterLista = lista.iterator();
+        while (iterLista.hasNext()){
+            aux = iterLista.next();
+            iterLista.remove();
+            if ( !(vistos.contains(aux)) && lista.contains(aux) ){  //SI EL VALOR ACTUAL ES NUEVO Y ESTA REPETIDO
+                sol.add(aux);   //LO AÑADIMOS A LA SOLUCION
+            }
+            vistos.add(aux);
+        }
+        return sol;
     }
 }
