@@ -63,9 +63,12 @@ public class Banco {
      * @return El saldo de la cuenta.
      * @throws <i>IllegalArgumentException</i> si el código de cuenta no es válido.
      */
-    public Integer consulta(String codigo) {
-        //TODO Metodo por implementar
-        return null;
+    public Integer consulta(String codigo) throws IllegalArgumentException{
+        if(codigo == null || !cuentas.containsKey(codigo)){
+            throw new IllegalArgumentException();
+        }
+
+        return cuentas.get(codigo);
     }
 
     /**
@@ -77,8 +80,18 @@ public class Banco {
      * @throws <i>IllegalArgumentExcpetion</i> si alguno de los códigos de cuenta no son válidos.
      */
     public List<Transferencia> historico(String primera, String segunda) {
+        if(primera == null || !desglose.containsKey(primera) || segunda == null || !desglose.containsKey(segunda)){
+            throw new IllegalArgumentException();
+        }
+        if (primera.equals(segunda)) {
+            return new ArrayList<>();
+        }
+        List<Transferencia> listAux = new ArrayList<Transferencia>(desglose.get(primera));
+        ListIterator<Transferencia> iter = listAux.listIterator();
+        while (iter.hasNext()){
+            //IMPLEMENTAR
+        }
         return null;
-        // TODO Metodo por implementar
     }
 
     public String toString() {
