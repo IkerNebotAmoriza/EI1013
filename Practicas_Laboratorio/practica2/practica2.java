@@ -1,4 +1,4 @@
-package Practicas_Laboratorio.practica2;
+package practica2;
 
 import java.util.*;
 
@@ -60,17 +60,27 @@ public class practica2 {
      */
     static public List<Integer> ordenar(List<Integer> l) {
         List<Integer> sortedList = new ArrayList<Integer>();
+        List<Integer> copy = new ArrayList<Integer>(l);
 
         if (l.isEmpty()){
             return sortedList;
         }
 
-        ListIterator<Integer> iter = l.listIterator();
-        Integer candidato = iter.next();
+        ListIterator<Integer> iter;
+        Integer min, aux;
 
-        //IMPLEMENTAR
-
-        sortedList.add(candidato);
+        while (!copy.isEmpty()){
+            min = copy.get(0);
+            iter = copy.listIterator();
+            while (iter.hasNext()){
+                aux = iter.next();
+                if (min >= aux){
+                    min = aux;
+                }
+            }
+            sortedList.add(min);
+            copy.remove(min);
+        }
         return sortedList;
     }
 }

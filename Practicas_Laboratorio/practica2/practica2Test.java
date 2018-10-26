@@ -1,13 +1,14 @@
-package Practicas_Laboratorio.practica2;
+package practica2;
 
 import org.junit.Assert;
 
 import java.util.*;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static Practicas_Laboratorio.practica2.practica2.ordenar;
+import static practica2.practica2.equivalentes;
+import static practica2.practica2.invierte;
+import static practica2.practica2.ordenar;
 
 public class practica2Test {
 
@@ -133,7 +134,7 @@ public class practica2Test {
                         else
                             System.out.println("  false");
 
-                        boolean resultado = practica2.equivalentes(ca, cb);
+                        boolean resultado = equivalentes(ca, cb);
                         System.out.println("Salida");
                         System.out.println("  " + resultado);
                         if (i == j)
@@ -178,7 +179,7 @@ public class practica2Test {
                 System.out.println("Salida esperada");
                 System.out.println("  " + esperado);
 
-                practica2.invierte(iter);
+                invierte(iter);
                 System.out.println("Salida:");
                 System.out.println("  " + actual);
 
