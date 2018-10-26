@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b301cf9-856e-4ebe-9b88-850148b19e2a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/practica3/Banco.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practica3/BancoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practica3/Transferencia.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practicas_Laboratorio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Practicas_Laboratorio.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practica2/practica2.java" beforeDir="false" afterPath="$PROJECT_DIR$/practica2/practica2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practica2/practica2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/practica2/practica2Test.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,60 +18,43 @@
     <session id="927760601">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.2" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="4" />
+          <entry key="java" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="4" />
+          <entry key="JAVA" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="322" />
+          <entry key="java" value="1377" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="322" />
+          <entry key="JAVA" value="1377" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/practica2/practica2.java">
+        <entry file="file://$PROJECT_DIR$/practica3/Banco.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-              <folding>
-                <element signature="e#697#705#0" expanded="true" />
-                <element signature="e#1292#1300#0" expanded="true" />
-                <element signature="e#1868#1877#0" expanded="true" />
-                <element signature="e#1923#1932#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/practica2/practica2Test.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3995">
-              <caret line="237" column="42" lean-forward="true" selection-start-line="237" selection-start-column="42" selection-end-line="237" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="136">
+              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
             </state>
           </provider>
         </entry>
@@ -86,6 +69,7 @@
       <list>
         <option value="$PROJECT_DIR$/practica2/practica2.java" />
         <option value="$PROJECT_DIR$/practica2/practica2Test.java" />
+        <option value="$PROJECT_DIR$/practica3/Banco.java" />
       </list>
     </option>
   </component>
@@ -96,8 +80,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="410" />
-    <option name="y" value="285" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="697" />
     <option name="height" value="735" />
   </component>
@@ -109,6 +93,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -119,14 +104,13 @@
             <path>
               <item name="Practicas_Laboratorio" type="b2602c69:ProjectViewProjectNode" />
               <item name="Practicas_Laboratorio" type="462c0819:PsiDirectoryNode" />
-              <item name="practica2" type="462c0819:PsiDirectoryNode" />
+              <item name="practica3" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -135,16 +119,18 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540550575048" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540558531652" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ikern\Desktop\Zonas de Trabajo\IntelliJ\EI1013\Practicas_Laboratorio\practica3" />
       <recent name="C:\Users\ikern\Desktop\Zonas de Trabajo\IntelliJ\EI1013\Practicas_Laboratorio\src\practica1" />
     </key>
   </component>
@@ -160,81 +146,99 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.practica2Test">
-    <configuration name="practica1Test.filtraTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.BancoTest">
+    <configuration name="BancoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Practicas_Laboratorio" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="practica1.*" />
+          <option name="PATTERN" value="practica3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="practica1" />
-      <option name="MAIN_CLASS_NAME" value="practica1.practica1Test" />
-      <option name="METHOD_NAME" value="filtraTest" />
+      <option name="PACKAGE_NAME" value="practica3" />
+      <option name="MAIN_CLASS_NAME" value="practica3.BancoTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BancoTest.BancoExcepccionesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Practicas_Laboratorio" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="practica3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="practica3" />
+      <option name="MAIN_CLASS_NAME" value="practica3.BancoTest" />
+      <option name="METHOD_NAME" value="BancoExcepccionesTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="practica2Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BancoTest.BancoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Practicas_Laboratorio" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="practica2.*" />
+          <option name="PATTERN" value="practica3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="practica2" />
-      <option name="MAIN_CLASS_NAME" value="practica2.practica2Test" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="practica2Test.equivalentesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Practicas_Laboratorio" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="practica2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="practica2" />
-      <option name="MAIN_CLASS_NAME" value="practica2.practica2Test" />
-      <option name="METHOD_NAME" value="equivalentesTest" />
+      <option name="PACKAGE_NAME" value="practica3" />
+      <option name="MAIN_CLASS_NAME" value="practica3.BancoTest" />
+      <option name="METHOD_NAME" value="BancoTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="practica2Test.ordenarTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BancoTest.asientoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Practicas_Laboratorio" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="practica2.*" />
+          <option name="PATTERN" value="practica3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="practica2" />
-      <option name="MAIN_CLASS_NAME" value="practica2.practica2Test" />
-      <option name="METHOD_NAME" value="ordenarTest" />
+      <option name="PACKAGE_NAME" value="practica3" />
+      <option name="MAIN_CLASS_NAME" value="practica3.BancoTest" />
+      <option name="METHOD_NAME" value="asientoTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BancoTest.asientosExcepcionesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Practicas_Laboratorio" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="practica3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="practica3" />
+      <option name="MAIN_CLASS_NAME" value="practica3.BancoTest" />
+      <option name="METHOD_NAME" value="asientosExcepcionesTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.practica1Test.filtraTest" />
-      <item itemvalue="JUnit.practica2Test.equivalentesTest" />
-      <item itemvalue="JUnit.practica2Test" />
-      <item itemvalue="JUnit.practica2Test.ordenarTest" />
+      <item itemvalue="JUnit.BancoTest.BancoTest" />
+      <item itemvalue="JUnit.BancoTest.BancoExcepccionesTest" />
+      <item itemvalue="JUnit.BancoTest.asientoTest" />
+      <item itemvalue="JUnit.BancoTest" />
+      <item itemvalue="JUnit.BancoTest.asientosExcepcionesTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.practica2Test" />
-        <item itemvalue="JUnit.practica2Test.ordenarTest" />
-        <item itemvalue="JUnit.practica2Test.equivalentesTest" />
-        <item itemvalue="JUnit.practica1Test.filtraTest" />
+        <item itemvalue="JUnit.BancoTest" />
+        <item itemvalue="JUnit.BancoTest.BancoTest" />
+        <item itemvalue="JUnit.BancoTest.asientoTest" />
+        <item itemvalue="JUnit.BancoTest.asientosExcepcionesTest" />
+        <item itemvalue="JUnit.BancoTest.BancoExcepccionesTest" />
       </list>
     </recent_temporary>
   </component>
@@ -252,48 +256,50 @@
       <workItem from="1538923016448" duration="7000" />
       <workItem from="1539173883854" duration="31000" />
       <workItem from="1540546936654" duration="1991000" />
+      <workItem from="1540552115260" duration="6354000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="practica2Test - 2018.10.26 at 12h 40m 37s.xml">
-      <configuration name="practica2Test" configurationId="JUnit" />
+    <history-entry file="BancoTest_asientoTest - 2018.10.26 at 14h 19m 26s.xml">
+      <configuration name="BancoTest.asientoTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="practica2Test - 2018.10.26 at 12h 40m 39s.xml">
-      <configuration name="practica2Test" configurationId="JUnit" />
+    <history-entry file="BancoTest_asientoTest - 2018.10.26 at 14h 21m 10s.xml">
+      <configuration name="BancoTest.asientoTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="practica2Test - 2018.10.26 at 12h 41m 05s.xml">
-      <configuration name="practica2Test" configurationId="JUnit" />
+    <history-entry file="BancoTest_asientoTest - 2018.10.26 at 14h 22m 07s.xml">
+      <configuration name="BancoTest.asientoTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="practica2Test - 2018.10.26 at 12h 41m 10s.xml">
-      <configuration name="practica2Test" configurationId="JUnit" />
+    <history-entry file="BancoTest_asientoTest - 2018.10.26 at 14h 23m 02s.xml">
+      <configuration name="BancoTest.asientoTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="practica2Test - 2018.10.26 at 12h 41m 13s.xml">
-      <configuration name="practica2Test" configurationId="JUnit" />
+    <history-entry file="BancoTest_asientoTest - 2018.10.26 at 14h 26m 18s.xml">
+      <configuration name="BancoTest.asientoTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="practica2Test - 2018.10.26 at 12h 41m 15s.xml">
-      <configuration name="practica2Test" configurationId="JUnit" />
+    <history-entry file="BancoTest_asientoTest - 2018.10.26 at 14h 26m 34s.xml">
+      <configuration name="BancoTest.asientoTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="practica2Test - 2018.10.26 at 12h 41m 18s.xml">
-      <configuration name="practica2Test" configurationId="JUnit" />
+    <history-entry file="BancoTest_asientoTest - 2018.10.26 at 14h 30m 51s.xml">
+      <configuration name="BancoTest.asientoTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="practica2Test - 2018.10.26 at 12h 41m 22s.xml">
-      <configuration name="practica2Test" configurationId="JUnit" />
+    <history-entry file="BancoTest_asientoTest - 2018.10.26 at 14h 54m 14s.xml">
+      <configuration name="BancoTest.asientoTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="practica2Test - 2018.10.26 at 12h 42m 41s.xml">
-      <configuration name="practica2Test" configurationId="JUnit" />
+    <history-entry file="BancoTest_BancoTest - 2018.10.26 at 14h 55m 16s.xml">
+      <configuration name="BancoTest.BancoTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="practica2Test - 2018.10.26 at 12h 42m 47s.xml">
-      <configuration name="practica2Test" configurationId="JUnit" />
+    <history-entry file="BancoTest - 2018.10.26 at 14h 55m 20s.xml">
+      <configuration name="BancoTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2252000" />
+    <option name="totallyTimeSpent" value="8606000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25945538" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.54631084" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -302,7 +308,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3289689" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.3289689" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -310,7 +316,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50075644" side_tool="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3289689" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -330,30 +336,8 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/practica1/practica1Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-570">
-          <caret line="38" column="11" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/practica1/practica1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practica2/practica2Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3995">
-          <caret line="237" column="42" lean-forward="true" selection-start-line="237" selection-start-column="42" selection-end-line="237" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/practica1/practica1Test.java" />
+    <entry file="file://$PROJECT_DIR$/src/practica1/practica1.java" />
     <entry file="file://$PROJECT_DIR$/practica2/practica2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -364,6 +348,37 @@
             <element signature="e#1868#1877#0" expanded="true" />
             <element signature="e#1923#1932#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/practica2/practica2Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="237" column="42" selection-start-line="237" selection-start-column="42" selection-end-line="237" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/practica3/BancoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2210">
+          <caret line="395" selection-start-line="395" selection-end-line="395" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/practica3/Transferencia.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/practica3/Banco.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>
