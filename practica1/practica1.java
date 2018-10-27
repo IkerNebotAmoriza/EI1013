@@ -1,4 +1,4 @@
-package Practicas_Laboratorio.practica1;
+package practica1;
 
 import java.util.*;
 

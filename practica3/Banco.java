@@ -86,12 +86,24 @@ public class Banco {
         if (primera.equals(segunda)) {
             return new ArrayList<>();
         }
-        List<Transferencia> listAux = new ArrayList<Transferencia>(desglose.get(primera));
-        ListIterator<Transferencia> iter = listAux.listIterator();
+        List<Transferencia> sol = new ArrayList<Transferencia>();
+        ListIterator<Transferencia> iter = new ArrayList<Transferencia>(desglose.get(primera)).listIterator();
+        Transferencia aux;
+        int cantidad;
+
         while (iter.hasNext()){
-            //IMPLEMENTAR
+            aux = iter.next();
+            cantidad = aux.cantidad;
+
+            if (!aux.origen.equals(primera)) {
+                cantidad = -cantidad;
+            }
+
+            if (aux.origen.equals(segunda) || aux.destino.equals(segunda)) {
+                sol.add(new Transferencia(primera,segunda,cantidad));
+            }
         }
-        return null;
+        return sol;
     }
 
     public String toString() {
