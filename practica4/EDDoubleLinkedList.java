@@ -65,55 +65,52 @@ public class EDDoubleLinkedList<T> implements List<T> {
      *  Añade los elementos de la lista intercalándolo con la lista actual.
      */
     public void shuffle(List<T> lista) {
-        if (lista != null && lista.size() != 0){
-            if (first == null){ //Si la lista actual esta vacia, la lista se convierte en la actual
-                Node aux = new Node(lista.get(0));
-                first = aux;
-                last = aux;
-                size++;
+        if (lista != null && lista.size() != 0){    //Si la lista argumento no es nula o esta vacia
+            if (first == null || size == 1) {   //Si la lista enlazada esta vacia o solo tiene un elemento
+                int index = 0;
+                if (first == null) {    //Si estaba vacia el primer elemento es el primero de la lista argumento
+                    first = new Node(lista.get(0));
+                    last = first;
 
-                for(int i = 1; i < lista.size(); i++){  //Anadimos los elementos de la lista al final
-                    aux = new Node(lista.get(i));
-                    last.next = aux;
-                    aux.prev = aux;
-                    last = aux;
+                    index++;
                     size++;
                 }
-            }
-            if (lista.size() == 1){ //Si la lista actual solo tiene un elemento
                 Node aux;
-                for(int i = 0; i < lista.size(); i++){  //Anadimos los elementos de la lista al final
-                    aux = new Node(lista.get(i));
+                while (index < lista.size()) {    //Anadimos los elementos de la lista argumento
+                    aux = new Node(lista.get(index));
                     last.next = aux;
-                    aux.prev = aux;
+                    aux.prev = last;
                     last = aux;
 
+                    index++;
                     size++;
                 }
-            }
-            Node actual = first;
-            Node aux;
-            int index = 0;
 
-            while (actual.next != null && index < lista.size()) {   //Recorremos la lista actual
-                aux = new Node(lista.get(index));   //Creamos el nodo a intercalar e incrementamos el indice
-                index++;
+            }else {
+                int index = 0;
+                Node actual=first;
+                Node aux;
+                while (actual.next != null && index < lista.size()) {    //Recorremos hasta el final la lista enlazada intercalando los elementos de la lista mientras queden
+                    aux = new Node(lista.get(index));
+                    aux.next = actual.next;
+                    aux.prev = actual;
+                    aux.next.prev = aux;
+                    aux.prev.next = aux;
 
-                aux.next = actual.next; //Modificamos las referencias
-                aux.prev = actual;
-                aux.next.prev = aux;
-                actual.next = aux;
+                    actual = aux.next;
+                    index++;
+                    size++;
+                }
+                while (index < lista.size()) {  //Si quedaban elementos en la lista argumento se añaden al final
+                    aux = new Node(lista.get(index));
+                    aux.prev = last;
+                    aux.next = null;
+                    aux.prev.next = aux;
 
-                actual = aux.next;  //Pasamos al siguiente nodo
-                size++;
-            }
-            for (int i = index; i < lista.size(); i++) {    //Anadimos los nodos restantes
-                aux = new Node(lista.get(i));
-                last.next = aux;
-                aux.prev = aux;
-                last = aux;
-
-                size++;
+                    last = aux;
+                    index++;
+                    size++;
+                }
             }
         }
     }
