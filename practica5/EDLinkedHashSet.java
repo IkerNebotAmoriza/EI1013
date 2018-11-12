@@ -1,5 +1,6 @@
 package practica5;
 
+import javax.swing.text.EditorKit;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
@@ -55,9 +56,36 @@ public class EDLinkedHashSet<T> implements Set<T> {
      * <code>rehashThreshold</code> se modifican de forma análoga.
      */
     private void rehash() {
-       if (dirty >= rehashThreshold) {
+        if (dirty >= rehashThreshold) {
+            // Guardamos la tabla orignal en una tabla auxilar
+            Node [] aux = table;
+            // Sustituimos las tablas de nodos y usados por una del doble de su tamaño
+            table = new EDLinkedHashSet.Node[aux.length*2];
+            used = new boolean[aux.length*2];
+            // Duplicamos el limite de onemos a cero el contador de celdas usadas
+            dirty = 0;
+            // Duplicamos el limite de elementos
+            rehashThreshold *= 2;
 
-       }
+            // Recorremos la lista de nodos auxiliar añadiendo cada uno a la tabla
+            Node n = first;
+            while (n != null) {
+                if (n == first){
+                    add((T) n.data);
+                    first = n;
+                    n = n.next;
+                }
+                else if (n == last){
+                    add((T) n.data);
+                    last = n;
+                    n = n.next;
+                }
+                else {
+                    add((T) n.data);
+                    n = n.next;
+                }
+            }
+        }
     }
 
     @Override
