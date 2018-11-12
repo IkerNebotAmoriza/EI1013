@@ -62,28 +62,32 @@ public class EDLinkedHashSet<T> implements Set<T> {
             // Sustituimos las tablas de nodos y usados por una del doble de su tamaño
             table = new EDLinkedHashSet.Node[aux.length*2];
             used = new boolean[aux.length*2];
-            // Duplicamos el limite de onemos a cero el contador de celdas usadas
+            // Ponemos a cero las celdas usadas y el tamaño de la tabla.
             dirty = 0;
+            size = 0;
             // Duplicamos el limite de elementos
             rehashThreshold *= 2;
 
             // Recorremos la lista de nodos auxiliar añadiendo cada uno a la tabla
             Node n = first;
-            while (n != null) {
-                if (n == first){
-                    add((T) n.data);
-                    first = n;
-                    n = n.next;
+            int code;
+
+            while (n != null){
+
+                // Obtenemos la posicion del nodo en la nueva tabla a partir del codigo hash
+                code = hash((T) n.data);
+                while (table[code] != null) {
+                    code = (code + 1) % table.length;
                 }
-                else if (n == last){
-                    add((T) n.data);
-                    last = n;
-                    n = n.next;
-                }
-                else {
-                    add((T) n.data);
-                    n = n.next;
-                }
+
+                // Anyadimos el nodo a la tabla y aumentamos los contadores
+                table[code] = n;
+                used[code] = true;
+                dirty++;
+                size++;
+
+                // Pasamos al siguiente nodo
+                n = n.next;
             }
         }
     }
