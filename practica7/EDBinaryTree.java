@@ -130,10 +130,14 @@ public class EDBinaryTree<T> implements BinaryTree<T> {
      * @return <code>true</code> if extended.
      */
     public boolean isExtended() {
-        // TODO Ejercioio 1
+        if (isEmpty() || isLeaf()) { // If the root BinaryNode is a leaf or is empty
+            return true;
+        }
+        if (root.left == null || root.right == null) {  // Returns false if root BinaryNode has only one child
+            return false;
+        }
+        return getLeftSubTree().isExtended() == true && getRightSubTree().isExtended() == true; // Recursion call
     }
-
-
 
     // methods needed for toString
     private static StringBuilder repeated(char c, int times) {

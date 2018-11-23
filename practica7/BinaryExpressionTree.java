@@ -100,6 +100,7 @@ public class BinaryExpressionTree {
      */
 	public static boolean digistsOnLeaves(BinaryTree<Character> tree) {
 	   // TODO Ejercicio 2
+		return true;
 	}
 			
 			
@@ -115,7 +116,8 @@ public class BinaryExpressionTree {
      * @return The result of the evaluation.
      */
 	public static float evaluate(BinaryTree<Character> tree) {
-	   //TODO Ejercicio 3	
+	   //TODO Ejercicio 3
+        return Float.intBitsToFloat(1);
 	}
 
 	
@@ -128,6 +130,7 @@ public class BinaryExpressionTree {
      */
 	public static List<Character> asListInorder(BinaryTree<Character> tree) {
 		// TODO Ejercicio 4
+        return null;
 	}
 
 	
