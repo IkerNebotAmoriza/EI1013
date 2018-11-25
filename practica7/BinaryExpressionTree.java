@@ -97,31 +97,48 @@ public class BinaryExpressionTree {
      * nodes.
      * @param tree
      * @return <code>true</code> if digits are only on the leaves.
+     * STUDENT NOTE: ITS ASSUMED THAT THE BINARY TREE IS EXTENDED
      */
 	public static boolean digistsOnLeaves(BinaryTree<Character> tree) {
-	   // TODO Ejercicio 2
-		return true;
+	    if (!tree.isLeaf() && isValidOperator(tree.getData())) { // If root is not a leaf and conatins a valid operator
+	        return digistsOnLeaves(tree.getLeftSubTree()) && digistsOnLeaves(tree.getRightSubTree()); // Recursive call for both childs
+        }
+        else if ( tree.isLeaf() && 0 <= Character.getNumericValue(tree.getData()) && Character.getNumericValue(tree.getData()) <= 9 ) { // If root is a leaf and contains a valid operand
+            return true;
+        }
+        else return false; // If none of the previous conditions are satisfied
 	}
-			
-			
+
 	private static boolean isValidOperator(Character c) {
 		if (c=='+' || c=='-' || c=='*' || c=='/' || c=='^')
 			return true;
 		else return false;
 	}
 
-
     /** Computes the result of executing the operation on a evaluation tree.
      * @param tree
      * @return The result of the evaluation.
      */
 	public static float evaluate(BinaryTree<Character> tree) {
-	   //TODO Ejercicio 3
-        return Float.intBitsToFloat(1);
+	   if ( digistsOnLeaves(tree) == true ) { // If the tree is an expression tree
+	       if ( !tree.isLeaf() ) { // If the tree is an operator
+	           switch (tree.getData()) { // Recursive calls for each operation
+                   case '+':
+                       return evaluate(tree.getLeftSubTree()) + evaluate(tree.getRightSubTree());
+                   case '-':
+                       return evaluate(tree.getLeftSubTree()) - evaluate(tree.getRightSubTree());
+                   case'/':
+                       return evaluate(tree.getLeftSubTree()) / evaluate(tree.getRightSubTree());
+                   case'*':
+                       return evaluate(tree.getLeftSubTree()) * evaluate(tree.getRightSubTree());
+                   case'^':
+                       return (float) Math.pow(evaluate(tree.getLeftSubTree()),evaluate(tree.getRightSubTree()));
+               }
+           }
+           else return Character.getNumericValue(tree.getData()); // If the tree is an operand
+       }
+       return -1; // If the tree is not an expression tree
 	}
-
-	
-
 
     /** Returns a list with the result of crossing the nodes of a expression tree in inOrder. The list will be
      * completely parenthesised.
@@ -132,8 +149,4 @@ public class BinaryExpressionTree {
 		// TODO Ejercicio 4
         return null;
 	}
-
-	
-
-	
 }
