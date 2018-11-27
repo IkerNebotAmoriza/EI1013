@@ -1,5 +1,6 @@
 package practica7;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
@@ -146,7 +147,21 @@ public class BinaryExpressionTree {
      * @return The list
      */
 	public static List<Character> asListInorder(BinaryTree<Character> tree) {
-		// TODO Ejercicio 4
-        return null;
+		List<Character> s = new ArrayList<Character>();
+		if (tree.isEmpty()){ //If the expression tree is empty, returns the solution
+		    return s;
+        }
+        if (tree.isLeaf()) { // If the tree is a leaf, appends its data to the solution
+            s.add(tree.getData());
+            return s;
+        }
+        // If the tree is not a leaf, returns a recursive call for each of its childs
+        s.add('(');
+        s.addAll(asListInorder(tree.getLeftSubTree()));
+        s.add(tree.getData());
+        s.addAll(asListInorder(tree.getRightSubTree()));
+        s.add(')');
+
+        return s; // Returns the solution
 	}
 }
