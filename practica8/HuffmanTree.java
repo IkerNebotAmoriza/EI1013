@@ -83,17 +83,42 @@ public class HuffmanTree {
      * @param codes Map en el que por cada caracter se contiene ña lista de 0s y 1s que lo codifica.
      */
 	public HuffmanTree (Map<Character, List<Integer>>  codes) {
-	    if (!codes.isEmpty()){
-	        Node root = new Node(false, '\0', (float) 0.0);
-            Iterator<Character> iter = codes.keySet().iterator();
-            while (iter.hasNext()) {
-                //TODO
-            }
-        }
-	}
-	
+		root = new Node(false, '\0', (float) 0.0);
+		Set<Character> ks = codes.keySet();
+		Iterator<Character> cIterator = ks.iterator();
+		char cAux; Node nAux;
+		List<Integer> lAux;
 
-	
+		if (!ks.isEmpty()) {
+			while (cIterator.hasNext()) {
+				cAux = cIterator.next();
+				lAux = codes.get(cAux);
+				nAux = root;
+
+				for (int i = 0; i < lAux.size(); i++) {
+					if (lAux.get(i) == 0) {
+						if (nAux.left != null) {
+							nAux = nAux.left;
+						}
+						else {
+							nAux.left = new Node(false, '\0', (float) 0.0);
+							nAux = nAux.left;
+						}
+					}
+					else {
+						if (nAux.right != null) {
+							nAux = nAux.right;
+						}
+						else {
+							nAux.right = new Node(false, '\0', (float) 0.0);
+							nAux = nAux.right;
+						}
+					}
+				}
+			}
+		}
+	}
+
 	public class NodeComparator implements Comparator<Node>
 	{
 	    @Override
@@ -118,7 +143,6 @@ public class HuffmanTree {
 	    }
 	}
 
-
     /** Dado un charácter c, devuelve la lista de 0s y 1s que lo codifica dentro del árbol. <cose>null</cose> en el
      *  caso de que el carácter no se encuentre en el árbol.
      * @param c El carácter
@@ -133,24 +157,25 @@ public class HuffmanTree {
     }
 
 	private List<Integer> findCode(Node n, char c) {
-        if (n.isLeaf){ // If the current node is a leaf, checks its data and returns an empty array if equals 'c'
-            if (n.c == c){
-                return new ArrayList<Integer>();
+        if (n != null){
+            if (n.isLeaf){ // If the current node is a leaf, checks its data and returns an empty array if equals 'c'
+                if (n.c == c){
+                    return new ArrayList<Integer>();
+                }
+            }
+            else { // If its not a leaf, makes a recursive call to its children
+                List<Integer> left = findCode(n.left, c);
+                if (left != null) { // If the character is on the left branch adds '0' to the given array
+                    left.add(0);
+                    return left;
+                }
+                List<Integer> right = findCode(n.right, c);
+                if (right != null) { // If the character is on the right branch adds '1' to the given array
+                    right.add(1);
+                    return right;
+                }
             }
         }
-        else { // If its not a leaf, makes a recursive call to its children
-			List<Integer> left = findCode(n.left, c);
-			if (left != null) { // If the character is on the left branch adds '0' to the given array
-				left.add(0);
-				return left;
-			}
-
-			List<Integer> right = findCode(n.right, c);
-			if (right != null) { // If the character is on the right branch adds '1' to the given array
-				right.add(1);
-				return right;
-			}
-		}
         return null; // If the character is not in the tree returns null
     }
 
