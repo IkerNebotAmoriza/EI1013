@@ -115,6 +115,8 @@ public class HuffmanTree {
 						}
 					}
 				}
+				nAux.isLeaf = true;
+				nAux.c = cAux;
 			}
 		}
 	}
