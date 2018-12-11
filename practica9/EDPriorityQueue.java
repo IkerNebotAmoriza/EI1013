@@ -73,15 +73,15 @@ public class EDPriorityQueue<E> {
     private void sink(int parent) {
         int min, lChild, rChild;
         boolean rightPlace = false;
-        while (parent < size()/2 && !rightPlace) {
+        while (parent < size/2 && !rightPlace) { //Mientras queden hijos que hundir
             min = parent; lChild = parent*2+1; rChild = lChild+1;
-            if (compare(data[min], data[lChild]) > 0) {
+            if (compare(data[min], data[lChild]) > 0) { //Si el hijo izquierdo ha de ser hundido
                 min = lChild;
             }
-            if (rChild < size() && compare(data[min], data[rChild]) > 0) {
+            if (rChild < size && compare(data[min], data[rChild]) > 0) {    //Si el hijo derecho ha de ser hundido
                 min = rChild;
             }
-            if (parent != min) {
+            if (parent != min) {    // Si no hay que hundir ningun hijo el elemento del monticulo está en la posicion adecuada
                 swap(parent, min);
                 parent = min;
             }
@@ -94,9 +94,9 @@ public class EDPriorityQueue<E> {
     private void floating(int child) {
         boolean rightPlace = false;
         int parent;
-        while (child > 0 && !rightPlace) {
+        while (child > 0 && !rightPlace) { // Mientras el elemento del monticulo tenga padre
             parent = (child-1)/2;
-            if (compare(data[parent], data[child]) > 0) {
+            if (compare(data[parent], data[child]) > 0) {   // Si el padre es mayor se intercambian posiciones
                 swap(parent, child);
                 child = parent;
             }
@@ -226,19 +226,19 @@ public class EDPriorityQueue<E> {
      * @throws NoSuchElementException If there no such item in the collection
      */
     public E remove(E item) throws NoSuchElementException {
-        int index = indexOf(item);
+        int index = indexOf(item);  //Obtenemos el indice del elemento a eliminar
         if (index == -1) {
             throw new NoSuchElementException();
         }
-        swap(index, size-1);
+        swap(index, size-1);    //Lo intercambiamos por la ultima posicion
         size--;
         if (size > 1) {
             int parent = (index-1)/2;
-            if (compare(data[parent], data[index]) > 0 && index > 0) {
+            if (compare(data[parent], data[index]) > 0 && index > 0) { // Si el elemento pertenece a una posicion superior
                 floating(index);
             }
             else {
-                sink(index);
+                sink(index);    //Si el elemento pertenece a una posicion inferior
             }
         }
         return item;
@@ -248,11 +248,11 @@ public class EDPriorityQueue<E> {
     /**
      * Converts a minHeap into a maxHeap.
      **/
-    public void maxHeapify() {
-        int n = size;
+    public void maxHeapify() { //VERSION NO OPTIMA ( La dejo porque es la que se me ocurrio antes de mirar la solucion
+        int n = size;         //en internet)
         E [] aux = (E[]) new Object[data.length];
-        for (int i = size-1; i >= 0; i--) {
-            aux[i] = remove();
+        for (int i = size-1; i >= 0; i--) { //Vamos extrayendo el elemento minimo del monticulo
+            aux[i] = remove();  //E introduciondolo desde la ultima posicion en el vector auxiliar
         }
         size = n;
         data = aux;
@@ -263,7 +263,26 @@ public class EDPriorityQueue<E> {
      * @return -1 if the queue contains a MinHeap, +1 if it is a maxHeap, or = if its empty.
      */
     public int typeOfHeap() {
-        // TODO Ejercicio 3
-        return 1;
+        if (!isEmpty()) {
+            int lChild, rChild;
+            int parent = 0;
+            while (parent < size/2) {
+                lChild = parent*2+1;
+                rChild = lChild+1;
+                // Si en algun momento se cumple el requisito de un maxHeap
+                if (compare(data[parent], data[lChild]) > 0 || rChild < size && compare(data[parent], data[rChild]) > 0) {
+                    return 1;
+                }
+                // Si en algun momento se cumple el requisito de un minHeap
+                else if (compare(data[parent], data[lChild]) < 0 || rChild < size && compare(data[parent], data[rChild]) < 0) {
+                    return -1;
+                }
+                parent++;
+            }
+        }
+        else {
+            return 0; //Si el vector esta vacio
+        }
+        return -1; //Si todos los elementos del vector son iguales suponemos que es un minHeap
     }
 }

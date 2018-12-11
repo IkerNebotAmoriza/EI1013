@@ -8,8 +8,26 @@ public class Heapsort {
 		v[p2] = aux;
 	}
 	
-	private static void sink(int[] v, int p, int size) {
-		// TODO Ejercicio 4
+	private static void sink(int[] v, int p, int size) { //Version para un maxHeap del metodo 'sink(...)' de la clase EDPriorityQueue
+	    int max, lChild, rChild;
+	    boolean rightPlace = false;
+	    while (p < size/2 && !rightPlace) { // Mientras queden hijos que evaluar
+	        max = p; lChild = p*2+1; rChild = lChild+1;
+	        // Comprobamos cual es el mayor elemento de los tres
+	        if (v[p] < v[lChild]) {
+	            max = lChild;
+            }
+            if (rChild < size && v[max] < v[rChild]) {
+                max = rChild;
+            }
+            if (p != max) { // Si hay algun hijo que hundir
+                swap(v ,p, max);
+                p = max;
+            }
+            else {
+                rightPlace = true;  // Cuando el padre sea el mayor elemento finalizamos
+            }
+        }
 	}
 	
 	private static void heapify (int[] v) {
