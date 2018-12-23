@@ -68,8 +68,8 @@ public class EDListGraph<T,W> implements EDGraph<T,W> {
 	    directed = g.isDirected();
 	    weighted = g.isWeighted();
         size = g.getSize();
-	    nodes = new ArrayList<Node<T>>(size);
-	    for (int i=0; i < nodes.size(); i++){
+	    nodes = new ArrayList<Node<T>>();
+	    for (int i=0; i < size; i++){
 	    	nodes.add(new Node<>(null));
 		}
 
@@ -332,8 +332,30 @@ public class EDListGraph<T,W> implements EDGraph<T,W> {
 		
 	
 	public int[] DepthFirstSearch(int start, int exit) {
-		// TODO parte del ejercicio 4
-        return new int [1];
+    	int [] path = new int[nodes.size()];
+    	// List with discovered nodes to avoid loops
+    	for (int i = 0; i < path.length; i++) {
+    		path[i] = -1;
+		}
+		// If both index are in range
+		if (start >= 0 && exit >= 0 && start < size && exit < size && nodes.get(start) != null) {
+			path[start] = start;
+			dfs(start, exit, path); // Private method call
+		}
+		return path;
+	}
+
+	private void dfs(int current, int exit, int [] path) {
+    	for (EDEdge<W> edge: nodes.get(current).lEdges) {
+    		int tg = edge.getTarget();
+    		if (path[tg] == -1) {
+    			path[tg] = current;
+    			if (current == exit) { // If we are on the exit
+    				break; // End of recursion
+				}
+    			dfs(tg, exit, path); // Recursive call
+			}
+		}
 	}
 	
 	
@@ -356,14 +378,42 @@ public class EDListGraph<T,W> implements EDGraph<T,W> {
 
 	
 	public Set<T> degree1() {
-        // TODO Ejercicio 2
-        return new HashSet<T>();
+        HashSet<T> d1Nodes = new HashSet<T>(); // Return set
+        HashMap<Integer, Integer> m = new HashMap<Integer, Integer>();
+        for (int i = 0; i < size; i++) { // Map with counters for each node index
+            m.put(i,0); // Index and counter init
+        }
+        Node<T> actual;
+        int aux;
+        for (int i = 0; i < size; i++) { // for each node on the nodes list
+            actual = nodes.get(i);
+            for (int j = 0; j < actual.lEdges.size(); j++) { // for each edge on the actual node
+                aux = m.get(actual.lEdges.get(j).getTarget());
+                m.put(actual.lEdges.get(j).getTarget(), aux+1);
+            }
+        }
+        for (int i = 0; i < size; i++) {
+            if (m.get(i) == 1) {
+                d1Nodes.add(nodes.get(i).data);
+            }
+        }
+        return d1Nodes;
 	}
 
 	public List<T> findPath(int entry, int exit) {
-		// TODO Ejercicio 4
-        return new ArrayList<T>();
+    	int [] path = DepthFirstSearch(entry, exit);
+    	ArrayList<T> aux = new ArrayList<T>();
+    	ArrayList<T> data = new ArrayList<T>();
+
+    	while (exit != entry) { // While not in entry position
+    		aux.add(nodes.get(exit).data); // Adds node to list
+    		exit = path[exit]; // Travels path backwards
+		}
+		aux.add(nodes.get(entry).data); // Adds entry node
+
+    	for (int i = aux.size()-1; i >= 0; i--) { // Reverse data list
+    		data.add(aux.get(i));
+		}
+		return data;
 	}
-	
-	
 }

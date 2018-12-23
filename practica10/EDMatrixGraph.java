@@ -242,8 +242,21 @@ public  class EDMatrixGraph<T,W> implements EDGraph<T,W> {
 	}
 
 	public Set<T> degree1()  {
-		//Implementar
-		return new HashSet<T>();
+		HashSet<T> d1Nodes = new HashSet<>();
+		int counter;
+
+		for (int col = 0; col < adjacencyMat.length; col++) {
+		    counter = 0;
+		    for (int row = 0; row < adjacencyMat[0].length; row++){
+		        if (adjacencyMat[row][col]){
+		            counter++;
+                }
+            }
+            if (counter == 1) {
+                d1Nodes.add(nodes[col]);
+            }
+        }
+        return d1Nodes;
 	}
 
 	@Override
